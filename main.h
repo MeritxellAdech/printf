@@ -39,7 +39,7 @@ int _puts(char *s);
 int _isneg(int number);
 int _convertneg(int number);
 int _finddigits(int number);
-char *itoa(int number);
+char *itoa(int number, int isneg);
 int print_number(int number);
 
 

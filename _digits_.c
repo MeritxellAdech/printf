@@ -26,7 +26,7 @@ int _isneg(int number)
  */
 int _convertneg(int number)
 {
-	return (number *= -1);
+	return ((number *= -1) - 1);
 }
 
 
@@ -57,7 +57,7 @@ int _finddigits(int number)
  * @number: the given number
  * Return: the new ASCII
  */
-char *itoa(int number)
+char *itoa(int number, int isneg)
 {
 	char *str = NULL;
 	int index = 0, digits = 0;
@@ -71,7 +71,10 @@ char *itoa(int number)
 	index = digits - 1;
 	while (index >= 0)
 	{
-		str[index] = (number % 10) + 48;
+		if (isneg && index == (digits - 1))
+			str[index] = ((number % 10) + 48) + 1;
+		else
+			str[index] = (number % 10) + 48;
 		number /= 10;
 		index--;
 	}
@@ -98,7 +101,7 @@ int print_number(int number)
 		number = _convertneg(number);
 	}
 
-	str = itoa(number);
+	str = itoa(number, c);
 	c += _puts(str);
 	free(str);
 
