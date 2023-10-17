@@ -38,6 +38,8 @@ int _printf(const char *format, ...)
 				}
 				j++;
 			}
+			if (!prints[j].code)
+				chars += _putchar(format[i]);
 		}
 		else
 			chars += _putchar(format[i]);
