@@ -65,6 +65,8 @@ char *itoa(int number)
 	digits = _finddigits(number);
 
 	str = malloc(sizeof(char) * digits + 1);
+	if (!str)
+		exit(EXIT_FAILURE);
 
 	index = digits - 1;
 	while (index >= 0)
@@ -98,6 +100,7 @@ int print_number(int number)
 
 	str = itoa(number);
 	c += _puts(str);
+	free(str);
 
 	return (c);
 }
