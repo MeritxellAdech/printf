@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 		{'\0', NULL}
 	};
 
-	if (!format)
+	if (!format || (format[i] == '%' && !format[i + 1]))
 		return (-1);
 	va_start(list, format);
 	while (format[i])
