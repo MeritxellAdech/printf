@@ -55,6 +55,7 @@ int _finddigits(int number)
  * itoa - converts an integer to ASCII
  *
  * @number: the given number
+ * @isneg: check whether a number is negative
  * Return: the new ASCII
  */
 char *itoa(int number, int isneg)

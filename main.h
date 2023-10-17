@@ -22,18 +22,11 @@ typedef struct specifier
 
 int _printf(const char *format, ...);
 
-/**
- * The function pointers
- */
 int _fmt_c(va_list);
 int _fmt_s(va_list);
 int _fmt_d(va_list);
 int _fmt_percent(va_list);
 
-/**
- * the functions used to manipulate the following:
- * alpha_numeric, hexadecimals, etc
- */
 int _putchar(char c);
 int _puts(char *s);
 int _isneg(int number);
