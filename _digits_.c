@@ -41,6 +41,8 @@ int _finddigits(int number)
 {
 	int digits = 0;
 
+	if (number == 0)
+		return (1);
 	while (number > 0)
 	{
 		number /= 10;
